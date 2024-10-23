@@ -21,19 +21,19 @@ module.exports = class userController {
       //Verifica se o email possui o portaledusenai.org.br
       return res.status(400).json({ error: "Email inválido, não docente" });
     } else {
-      // Construção da query INSERT
+      // Construção da query INSERT-cadastro
       const query = `INSERT INTO usuario (cpf, senha, email, nome_completo) VALUES(
     '${cpf}',
     '${senha}',
     '${email}',
     '${nome_completo}')`;
       // Executando a query criada
-      try {
+      try { //respostas
         connect.query(query, function (err) {
           if (err) {
-            console.log(err);
-            console.log(err.code);
-            if (err.code === "ER_DUP_ENTRY") {
+            console.log(err); //imprime o erro
+            console.log(err.code); //imprime o erro do código
+            if (err.code === "ER_DUP_ENTRY") { //erro de duplicidade
               return res
                 .status(400)
                 .json({ error: "O Email ja está vinculado a outro usuário" });
@@ -48,7 +48,7 @@ module.exports = class userController {
               .json({ message: "Usuário cadastrado com sucesso" });
           }
         });
-      } catch (error) {
+      } catch (error) { //trata e captura o erro
         console.error(error);
         res.status(500).json({ error: "Erro interno do servidor" });
       }
@@ -58,32 +58,34 @@ module.exports = class userController {
   static async loginUser(req, res) {
     const { senha, email } = req.body;
 
+    //verifica se os campos estão preenchidos
     if (!senha || !email) {
       return res
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
-    } else {
+    } else { //seleciona a tabela de usuário (email)
       const query = `SELECT * FROM usuario WHERE email = '${email}'`;
       try {
-        connect.query(query, function (err, results) {
+        connect.query(query, function (err, results) { //imprime o erro
           if (err) {
             console.error(err);
             return res.status(500).json({ error: "Erro interno no Servidor" });
           }
 
-          if (results.length === 0) {
+          if (results.length === 0) { //determina se não retornou nenhum resultado
             return res.status(404).json({ error: "Usuário não entrado" });
           }
 
+          //consta que já existe algum usuário
           const usuario = results[0];
 
-          if (usuario.senha === senha) {
+          if (usuario.senha === senha) { //verifica se a senha está correta
             return res.status(200).json({ message: "Login bem sucedido" });
           } else {
             return res.status(401).json({ error: "Senha incorreta" });
           }
         });
-      } catch (error) {
+      } catch (error) { //captura e trata os erros
         console.error("Erro ao executar consulta:", error);
         return res.status(500).json({ error: "Erro interno do Servidor" });
       }
@@ -91,10 +93,11 @@ module.exports = class userController {
   }
   //Vai listar todos os usuários cadastrados
   static async getAllUsers(req, res) {
+    //seleciona todos os usuários da tabela usuario
     const query = `SELECT * FROM usuario`;
     try {
       connect.query(query, function (err, results) {
-        if (err) {
+        if (err) { //imprime o erro
           console.error(err);
           return req.status(500).json({ error: "Erro interno do Servidor" });
         }
@@ -102,7 +105,7 @@ module.exports = class userController {
           .status(200)
           .json({ message: "Lista de Usuários", users: results });
       });
-    } catch (error) {
+    } catch (error) { //captura e trata os erros
       console.error("Erro ao executar consulta:", error);
       return res.status(500).json({ error: "Erro interno do Servidor" });
     }
@@ -122,10 +125,10 @@ module.exports = class userController {
     const query = `UPDATE usuario SET cpf=?, email=?, senha=?, nome=? WHERE id_usuario = ?`;
     const values = [cpf, email, senha, nome_completo, id];
 
-    try {
+    try { //respostas
       connect.query(query, values, function (err, results) {
         if (err) {
-          if (err.code === "ER_DUP_ENTRY") {
+          if (err.code === "ER_DUP_ENTRY") { //erro duplicado
             return res
               .status(400)
               .json({ error: "Email já cadastrado por outro usuário" });
@@ -134,7 +137,7 @@ module.exports = class userController {
             res.status(500).json({ error: "Erro interno do Servidor" });
           }
         }
-        if (results.affectedRows === 0) {
+        if (results.affectedRows === 0) { //resposta do banco de dados
           return res.status(404).json({ message: "Usuário não encontrado" });
         }
         return res
@@ -160,14 +163,14 @@ module.exports = class userController {
           console.error(err);
           return res.status(500).json({ error: "Erro interno no servidor" });
         }
-        if (results.affectedRows === 0) {
+        if (results.affectedRows === 0) { //resposta do banco de dados
           return res.status(404).json({ error: "Usuário não encontrado" });
         }
         return res
           .status(200)
           .json({ message: "Usuário excluido com sucesso" });
       });
-    } catch (error) {
+    } catch (error) { //captura e trata os erros
       console.error(err);
       return res.status(500).json({ error: "Erro interno do servidor" });
     }
