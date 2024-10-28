@@ -1,9 +1,9 @@
-const connect = require("../db/connect");
+const connect = require("../db/connect"); //Fazendo a conexão com banco
 
-module.exports = class userController {
+module.exports = class userController { //improtando a classe userController
   static async createUser(req, res) {
-    const { cpf, email, senha, nome_completo } = req.body;
-
+    const { cpf, email, senha, nome_completo } = req.body; //o que deve ter na requisição
+    console.log(req.body)
     if (!cpf || !email || !senha || !nome_completo) {
       //Verifica se todos os campos estão preenchidos
       return res
@@ -22,18 +22,19 @@ module.exports = class userController {
       return res.status(400).json({ error: "Email inválido, não docente" });
     } else {
       // Construção da query INSERT-cadastro
+      // valores que deve, estar na query de usuario
       const query = `INSERT INTO usuario (cpf, senha, email, nome_completo) VALUES(
     '${cpf}',
     '${senha}',
     '${email}',
     '${nome_completo}')`;
       // Executando a query criada
-      try { //respostas
+      try { //Permite que você teste um bloco de código que pode gerar um erro, sem interromper a execução do programa
         connect.query(query, function (err) {
           if (err) {
             console.log(err); //imprime o erro
             console.log(err.code); //imprime o erro do código
-            if (err.code === "ER_DUP_ENTRY") { //erro de duplicidade
+            if (err.code === "ER_DUP_ENTRY") { //erro de duplicidade na chave primária do banco
               return res
                 .status(400)
                 .json({ error: "O Email ja está vinculado a outro usuário" });
@@ -42,13 +43,13 @@ module.exports = class userController {
                 .status(500)
                 .json({ error: "Erro interno do servidor" });
             }
-          } else {
+          } else { // se não houve um erro, o usuário será cadastrado
             return res
               .status(201)
               .json({ message: "Usuário cadastrado com sucesso" });
           }
         });
-      } catch (error) { //trata e captura o erro
+      } catch (error) { //captura e faz o tratamento dos erros que aconteceram
         console.error(error);
         res.status(500).json({ error: "Erro interno do servidor" });
       }
@@ -63,8 +64,8 @@ module.exports = class userController {
       return res
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
-    } else { //seleciona a tabela de usuário (email)
-      const query = `SELECT * FROM usuario WHERE email = '${email}'`;
+    } else { //se os campos foram preenchidos ele procura no banco o registro do usuário
+      const query = `SELECT * FROM usuario WHERE email = '${email}'`; //vai buscar o usuário pelo email
       try {
         connect.query(query, function (err, results) { //imprime o erro
           if (err) {
@@ -72,15 +73,15 @@ module.exports = class userController {
             return res.status(500).json({ error: "Erro interno no Servidor" });
           }
 
-          if (results.length === 0) { //determina se não retornou nenhum resultado
-            return res.status(404).json({ error: "Usuário não entrado" });
+          if (results.length === 0) { //verifica se existe algum usuário cadastrado com aquele email
+            return res.status(404).json({ error: "Usuário não encontrado" });
           }
 
           //consta que já existe algum usuário
           const usuario = results[0];
 
           if (usuario.senha === senha) { //verifica se a senha está correta
-            return res.status(200).json({ message: "Login bem sucedido" });
+            return res.status(200).json({ message: "Login bem sucedido" }); //se a senha estiver correta
           } else {
             return res.status(401).json({ error: "Senha incorreta" });
           }
@@ -122,7 +123,7 @@ module.exports = class userController {
         .status(400)
         .json({ error: "Todos os campos devem ser preenchidos" });
     }
-    const query = `UPDATE usuario SET cpf=?, email=?, senha=?, nome=? WHERE id_usuario = ?`;
+    const query = `UPDATE usuario SET cpf=?, email=?, senha=?, nome_completo=? WHERE id_usuario = ?`;
     const values = [cpf, email, senha, nome_completo, id];
 
     try { //respostas

@@ -6,41 +6,52 @@
     <title>PÁGINA LOGIN</title>
 
     <!--Incluindo o arquivo de estilização-->
-    <link rel="stylesheet" href="styles_index.css">
+    <link rel="stylesheet" href="styles_index.css" />
   </head>
 
   <body>
     <header class="loginHeader">
       <section class="loginHomeButton">
-        <button onclick="window.location.href='index.html'"> Home </button>  
+        <button onclick="window.location.href='index.html'">Home</button>
       </section>
       <section class="loginImage">
-        <img src="senaisplogo (1).png" alt="Logo SENAI">
+        <img src="senaisplogo (1).png" alt="Logo SENAI" />
       </section>
     </header>
 
-      <main>
-        <form id="formulariologin">
-          <section class="loginGap">
-            <div class="loginButCad">
-              <label for="cpf"> EMAIL: </label>
-              <input type="text" placeholder="email" class="input-box-login"/>
-              <br>
-              <label for="senha"> SENHA: </label>
-              <input type="text" placeholder="Senha" class="input-box-login"/>
-              <br>
-              <input type="submit" value="Fazer login" class="input-box-login">
-            </div>
-          </section>
-        </form>
-      </main>
-
+    <main>
+      <form id="formulariologin">
+        <section class="loginGap">
+          <div class="loginButCad">
+            <label for="email"> EMAIL: </label>
+            <input
+              id="email"
+              type="text"
+              placeholder="email"
+              class="input-box-login"
+            />
+            <br />
+            <label for="senha"> SENHA: </label>
+            <input
+              id="senha"
+              type="text"
+              placeholder="Senha"
+              class="input-box-login"
+            />
+            <br />
+            <input id="login" type="submit" value="Fazer login" class="input-box-login" />
+          </div>
+        </section>
+      </form>
+    </main>
 
     <footer class="loginFooter">
       <section class="loginAgenBut">
-        <button onclick="window.location.href='agendamento.html'"> AGENDAMENTO </button>
+        <button onclick="window.location.href='agendamento.html'">
+          AGENDAMENTO
+        </button>
       </section>
     </footer>
-
+    <script src="app.js"></script>
   </body>
 </html>

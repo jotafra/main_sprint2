@@ -1,5 +1,7 @@
 //Chamada da função createUser para a associação ao evento de envio a formulário
-document.getElementById("formulariocadastro").addEventListener("submit", function (event) {
+const formularioCadastro = document.getElementById("formulariocadastro");
+if (formularioCadastro) {
+  formularioCadastro.addEventListener("submit", function (event) {
     //Previne o comportamento padrao do formulario, ou seja, impede que ele seja enviado e recarregue a pagona
     event.preventDefault();
     //Captura os valores dos campos do formularios
@@ -8,7 +10,7 @@ document.getElementById("formulariocadastro").addEventListener("submit", functio
     const cpf = document.getElementById("cpf").value;
     const senha = document.getElementById("senha").value;
 
-    console.log(nome_completo, email, cpf, senha)
+    console.log(nome_completo, email, cpf, senha);
 
     //Requisição HTTP para o endpoint de cadastro de usuario
     fetch("http://localhost:5000/agen/sala-de-aula/v1/user", {
@@ -44,17 +46,21 @@ document.getElementById("formulariocadastro").addEventListener("submit", functio
         alert("Erro no cadastro " + error.message);
         console.error("Erro:", error.message);
       });
-  }); //Fechamento createUser
-;
+  });
+} //Fechamento createUser
 
-  //====================================================================================================
+//====================================================================================================
 
-document.getElementById("formulariologin").addEventListener("submit", function (event) {
+const formularioLogin = document.getElementById("formulariologin");
+if (formularioLogin) {
+  formularioLogin.addEventListener("submit", function (event) {
+    console.log("Arquivo app.js carregado");
     //Previne o comportamento padrao do formulario, ou seja, impede que ele seja enviado e recarregue a pagona
     event.preventDefault();
     //Captura os valores dos campos do formularios
-    const cpf = document.getElementById("cpf").value;
+    const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
+
     //Requisição HTTP para o endpoint de cadastro de usuario
     fetch("http://localhost:5000/agen/sala-de-aula/v1/login", {
       //Realiza uma chamada http para o servidor(a rota definida)
@@ -64,7 +70,7 @@ document.getElementById("formulariologin").addEventListener("submit", function (
         "Content-Type": "application/json",
       },
       //Transforma os dados do formulario de uma string json para serem enviados no corpo da req
-      body: JSON.stringify({ cpf, senha }),
+      body: JSON.stringify({ email, senha }),
     })
       .then((response) => {
         //Tratamento da resposta do servidor / API
@@ -89,5 +95,5 @@ document.getElementById("formulariologin").addEventListener("submit", function (
         alert("Erro no cadastro " + error.message);
         console.error("Erro:", error.message);
       });
-  } //Fechamento createUser
-)
+  });
+} //Fechamento createUser

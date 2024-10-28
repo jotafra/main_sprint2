@@ -5,9 +5,9 @@ const userController = require("../controllers/userController")
 
 router.post('/user', userController.createUser);
 router.post('/login', userController.loginUser);
-// router.get('/user', userController.getAllUsers);
-// router.put('/user/', userController.updateUser);
-// router.delete('/user/:id', userController.deleteUser);
+router.get('/listar', userController.getAllUsers);
+router.put('/atualizar/:id', userController.updateUser);
+router.delete('/deletar/:id', userController.deleteUser);
 
 module.exports = router // Chamando o módulo para a rota
 //Exportação da instância de express configurada, para que seja acessada em outros arquivos
