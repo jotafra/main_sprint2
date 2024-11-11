@@ -1,4 +1,5 @@
 /*Seletor Universal - seleciona todos os elementos da página e aplica estilos comuns padronizados*/
+/* Tudo que tem aqui antes da marcação é universal, acontece em todas as paginas*/
 *{
     margin: 0; /*remove a margem padrão de todos os elementos*/
     padding: 0; /*remove o padding de todos os elementos*/
@@ -11,19 +12,19 @@ body{
 }
 header{
     background-color: #FF0000; /* Cor de fundo em hexadecimal*/
-    padding: 35px;
+    padding: 35px; /* Criação de espaço entre elementos da página criada */
 }
 footer{ /* Rodapé geral */
     background-color: #FF0000;
-    padding: 30px;
+    padding: 30px; 
     bottom:0; /*Alinha o rodapé abaixo da página*/
     position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
     width: 100%; /*Define a largura do rodapé como 100% da janela de visualização*/
 }
 /*=================================== Index page =====================================*/
 .indexPage h3{ /* texto "Página home" */
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 24px; /* Determina o tamanho da fonte */
+    font-weight: bold; /* Coloca fonte como negrito */ 
     text-align: center; /*Alinha o texto do cabeçalho ao centro*/
     margin: 0;
     padding: 0;
@@ -32,8 +33,8 @@ footer{ /* Rodapé geral */
     right: 20px; /*Alinha o botão á direita, com 20px de ditância da borda direita da página */
     top: 20px; /*Alinha o botão ao topo, com 20px de distância da borda superior*/
     position: absolute; /*Posiciona o botão de forma absoluta com relação ao cabeçalho*/
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #FFFFFF; /* Define a cor de fundo do site */ 
+    color: #000000; 
     font-weight: bold;
     font-size: 24px;
     padding: 15px 25px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
@@ -56,16 +57,16 @@ footer{ /* Rodapé geral */
 }
 .indexMain {
     padding: 30px;
-    text-align: center;
+    text-align: center; /* Alinha texto ao centro do formato exigido, ou bloco */
 }
 .indexImage img{
     margin-top: 80px; /* Espaçamento entre o título e os botões */
     max-width: 550px; /*Define a largura máxima das imagens dentro da main como 150px*/
 }
 .footerIndex{ /*Estilo do rodapé / footer*/
-    background-color: #FF0000;
+    background-color: #FF0000; /* Define a cor do fundo, background */
     padding: 40px;
-    font-size: 30px;
+    font-size: 30px; /* Tamanho da fonte  */
     font-weight: bold;
     text-align: center; /*Alinha o texto do rodapé ao centro*/
     bottom:0; /*Alinha o rodapé abaixo da página*/
@@ -206,8 +207,6 @@ footer{ /* Rodapé geral */
     color: #ff0000;
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
-.cadFooter{ /* Rodapé */
-}
 
 /*======================== Agendamento page ================================*/
 .headerAgen{
@@ -219,3 +218,8 @@ footer{ /* Rodapé geral */
     max-width: 400px; /*Define a largura máxima das imagens dentro da main como 150px*/
     margin-top: 10px;
 }
+
+/* Cada separação tem um html como "Hospedeiro" no qual é atribuido ao html */
+/* A logo senaisplogo (1).png é atribuida a todas as paginas html */
+/* Toda classe vem com o nome do arquivo html e o complemento ex: agenHeader ou headerAgen */
+/* Qualquer duvida utilizar o black box para adição de comentários sobre as linhas de programação do código */

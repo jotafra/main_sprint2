@@ -97,3 +97,6 @@ if (formularioLogin) {
       });
   });
 } //Fechamento createUser
+
+// Passar pelo black box (Extensão do chat gpt para programação) 
+//e pedir para realizar comentarios a cada linha de código para explicação melhor 
