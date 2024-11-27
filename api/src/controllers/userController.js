@@ -17,9 +17,6 @@ module.exports = class userController { //improtando a classe userController
     } else if (!email.includes("@")) {
       //Verifica se o email tem o @
       return res.status(400).json({ error: "Email inválido. Deve conter @" });
-    } else if (!email.includes("@portaledusenaisp.org.br")) {
-      //Verifica se o email possui o portaledusenai.org.br
-      return res.status(400).json({ error: "Email inválido, não docente" });
     } else {
       // Construção da query INSERT-cadastro
       // valores que deve, estar na query de usuario

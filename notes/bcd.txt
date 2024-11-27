@@ -1,0 +1,59 @@
+
+
+create database vio_reservas;
+
+use vio_reservas;
+
+create table usuario (
+id_usuario int auto_increment primary key,
+nome_completo varchar(100) not null,
+email varchar(100) not null,
+senha varchar(50) not null,
+cpf char(11) not null
+);
+
+create table reserva (
+id_reserva int auto_increment primary key,
+data date not null,
+time_begin time not null,
+time_end time not null,
+id_sala varchar(10) not null,
+id_usuario int not null,
+foreign key (id_usuario) references usuario (id_usuario)
+);
+
+create table salas (
+id_sala int auto_increment primary key,
+nome_da_sala varchar(30) not null,
+capacidade int not null,
+localizacao varchar(50) not null, 
+disponibilidade varchar(50),
+equipamentos varchar (30) not null
+);
+
+
+// === teste POSTMAN ===
+
+-- reserva
+{
+    "fk_id_usuario":"1",
+    "fk_id_sala":"1", 
+    "datahora_inicio":"2024-01-01 00:00:00", 
+    "datahora_fim":"2024-01-01 01:00:00"
+}
+
+-- usuario
+{
+   	"cpf": 12345678911,
+    	"email": "123@gmail",
+    	"senha": 1234, 
+    	"nome_completo": "não sei"
+}
+-- sala
+{
+   	"nome_da_sala": "b11",
+    	"capacidade": 32,
+    	"localizacao": "Bloco 12", 
+    	"disponibilidade": "Sim",
+    	"equipamentos": "Informatica"
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento</title>
+
+    <!--Incluindo o arquivo de estilização-->
+    <link rel="stylesheet" href="styles_index.css" />
+  </head>
+  <body>
+    <header class="headerAgen">
+      <section class="agenImage">
+        <img src="senaisplogo (1).png" alt="Logo SENAI" />
+      </section>
+    </header>
+
+    <main>
+      <section class="titleAgen1">
+        <h1>Selecione uma data</h1>
+      </section>
+      <section class="chooseDateAgen1">
+        <form id="form-selecao-data">
+          <label for="data">Escolha a data:</label>
+          <input
+            type="date"
+            id="data"
+            name="data"
+            min="2024-01-01"
+            max="2024-12-31"
+            required
+          />
+        </form>
+      </section>
+    </main>
+
+    <main>
+      <section class="formulariohora">
+      </section>
+      <section>
+        <form id="form-selecao-horario">
+          <label for="data">Escolha o horário:</label>
+          <input
+            type="time"
+            id="hora"
+            name="horario"
+            min="07:30:00"
+            max="22:30:00"
+            required
+          />
+        </form>
+      </section>
+    </main>
+
+    <label>Salas de aula</label>
+    <select id="sala">
+      <option value="Sala 1">Sala 1</option>
+      <option value="Sala 2">Sala 2</option>
+    </select>
+
+    <main>
+        <section>
+            <input type="submit" value="Reservar">
+        </section>
+    </main>
+
+
+    <footer></footer>
+  </body>
+</html>

@@ -20,7 +20,7 @@ class AppController {
     // Define as rotas da API
     //URL base:
     const api_routes = require("./routes/api_routes");
-    this.express.use("/agen/sala-de-aula/v1", api_routes); 
+    this.express.use("/agensala/", api_routes); 
     
   }
 }
