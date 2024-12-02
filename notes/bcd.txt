@@ -56,6 +56,8 @@ create table reserva(
     	"disponibilidade": "Sim",
     	"equipamentos": "Informatica"
 }
+-- sala DELETE
+
 
 -- agendamento POST
 {

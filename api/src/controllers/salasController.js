@@ -63,11 +63,11 @@ module.exports = class salasController {
   static async updateSala(req, res) {
     const { id_sala, nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos } = req.body;
 
-    if (!id_sala || !nome_da_sala || !capacidade || !localizacao || disponibilidade === undefined) {
+    if (!id_sala || !nome_da_sala || !capacidade || !localizacao || !disponibilidade || !equipamentos === undefined) {
       return res.status(400).json({ error: "Todos os campos obrigatórios devem ser preenchidos" });
     }
 
-    const queryUpdate = `UPDATE salas SET nome_da_sala=?, capacidade=?, localizacao=?, disponibilidade=?, equipamentos=? WHERE id_salas = ?`;
+    const queryUpdate = `UPDATE salas SET nome_da_sala=?, capacidade=?, localizacao=?, disponibilidade=?, equipamentos=? WHERE id_sala = ?`;
     const values = [nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos, id_sala];
 
     try {
@@ -87,10 +87,10 @@ module.exports = class salasController {
     }
   }
 
-  // Excluir uma sala
+// ----------- Excluir uma sala
   static async deleteSala(req, res) {
     const salaId = req.params.id;
-    const queryDelete = `DELETE FROM salas WHERE id_salas = ?`;
+    const queryDelete = `DELETE FROM salas WHERE id_sala = ?`;
 
     try {
       connect.query(queryDelete, [salaId], function (err, results) {

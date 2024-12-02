@@ -59,8 +59,8 @@ footer{ /* Rodapé geral */
     padding: 30px;
     text-align: center; /* Alinha texto ao centro do formato exigido, ou bloco */
 }
-.indexImage img{
-    margin-top: 150px; /* Espaçamento entre o título e os botões */
+.indexImage1 img{
+    margin-top: 100px; /* Espaçamento entre o título e os botões */
     max-width: 400px; /*Define a largura máxima das imagens dentro da main como 150px*/
     border-radius: 10px;
 }
