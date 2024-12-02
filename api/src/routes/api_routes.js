@@ -15,9 +15,9 @@ router.get("/salas", salasController.getAllSalas);
 router.put("/salas", salasController.updateSala);
 router.delete("/salas/:id", salasController.deleteSala);
 
-router.post("/reserva", reservaController.createReservas); // http://localhost:5000/reservas/v1/reserva
-router.get("/reservas", reservaController.getAllReservas); // http://localhost:5000/reservas/v1/reservas
-router.put("/reserva/:id_reserva", reservaController.updateReserva); // http://localhost:5000/reservas/v1/reserva/id_reserva
-router.delete("/reserva/:id_reserva", reservaController.deleteReserva); // http://localhost:5000/reservas/v1/reserva/id_reserva
+router.post('/agendamento', reservaController.createAgend);
+router.get('/agendamento', reservaController.getAllAgend);
+router.put('/agendamento', reservaController.updateAgend);
+router.delete('/agendamento/:id', reservaController.deleteAgend);
 
 module.exports = router

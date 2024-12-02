@@ -2,7 +2,7 @@ const connect = require("../db/connect");
 
 module.exports = class salasController {
   
-  // Criar uma nova sala
+// ------------------- Criar uma nova sala
   static async createSala(req, res) {
     const { nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos } = req.body;
 
@@ -41,7 +41,7 @@ module.exports = class salasController {
     }
 }
 
-  // Listar todas as salas
+// ------------------  Listar todas as salas
   static async getAllSalas(req, res) {
     const query = `SELECT * FROM salas`;
 
@@ -59,16 +59,16 @@ module.exports = class salasController {
     }
   }
 
-  // Atualizar uma sala
+// ----------------------- Atualizar uma sala
   static async updateSala(req, res) {
-    const { id_salas, nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos } = req.body;
+    const { id_sala, nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos } = req.body;
 
-    if (!id_salas || !nome_da_sala || !capacidade || !localizacao || disponibilidade === undefined) {
+    if (!id_sala || !nome_da_sala || !capacidade || !localizacao || disponibilidade === undefined) {
       return res.status(400).json({ error: "Todos os campos obrigatórios devem ser preenchidos" });
     }
 
     const queryUpdate = `UPDATE salas SET nome_da_sala=?, capacidade=?, localizacao=?, disponibilidade=?, equipamentos=? WHERE id_salas = ?`;
-    const values = [nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos, id_salas];
+    const values = [nome_da_sala, capacidade, localizacao, disponibilidade, equipamentos, id_sala];
 
     try {
       connect.query(queryUpdate, values, function (err, results) {

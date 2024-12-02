@@ -21,7 +21,7 @@ class AppController {
     //URL base:
     const api_routes = require("./routes/api_routes");
     this.express.use("/agensala/", api_routes); 
-    
+    //http://localhost:5000/agensala
   }
 }
 //Exporta a instância do Express configurada, tornando-a acessível em outros arquivos
