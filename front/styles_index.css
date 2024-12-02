@@ -23,7 +23,7 @@ footer{ /* Rodapé geral */
 }
 /*=================================== Index page =====================================*/
 .indexPage h3{ /* texto "Página home" */
-    font-size: 24px; /* Determina o tamanho da fonte */
+    font-size: 20px; /* Determina o tamanho da fonte */
     font-weight: bold; /* Coloca fonte como negrito */ 
     text-align: center; /*Alinha o texto do cabeçalho ao centro*/
     margin: 0;
@@ -37,7 +37,7 @@ footer{ /* Rodapé geral */
     color: #FFFFFF; 
     font-weight: bold;
     font-size: 24px;
-    padding: 15px 25px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 8px 18px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none; /*Remove a borda padrão do botão*/
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
@@ -50,7 +50,7 @@ footer{ /* Rodapé geral */
     color: #FFFFFF;
     font-weight: bold;
     font-size: 24px;
-    padding: 15px 25px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 8px 18px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none; /*Remove a borda padrão do botão*/
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
@@ -60,14 +60,14 @@ footer{ /* Rodapé geral */
     text-align: center; /* Alinha texto ao centro do formato exigido, ou bloco */
 }
 .indexImage img{
-    margin-top: 80px; /* Espaçamento entre o título e os botões */
-    max-width: 500px; /*Define a largura máxima das imagens dentro da main como 150px*/
+    margin-top: 150px; /* Espaçamento entre o título e os botões */
+    max-width: 400px; /*Define a largura máxima das imagens dentro da main como 150px*/
     border-radius: 10px;
 }
 .footerIndex{ /*Estilo do rodapé / footer*/
     background-color: #FF0000; /* Define a cor do fundo, background */
-    padding: 20px;
-    font-size: 20px; /* Tamanho da fonte  */
+    padding: 18px;
+    font-size: 18px; /* Tamanho da fonte  */
     text-align: center; /*Alinha o texto do rodapé ao centro*/
     bottom:0; /*Alinha o rodapé abaixo da página*/
     position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
@@ -83,7 +83,7 @@ footer{ /* Rodapé geral */
 .loginImage img{
     display: block; /* Necessário para que as margens funcionem */
     margin: 0 auto;
-    max-width: 300px; 
+    max-width: 200px; 
     margin-top: 12px;
 }
 .loginHomeButton button{ /* Botão home */
@@ -93,15 +93,15 @@ footer{ /* Rodapé geral */
     color: #FFFFFF;
     font-weight: bold;
     font-size: 24px;
-    margin-top: 25px;
-    padding: 15px 30px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    margin-top: 10px;
+    padding: 6px 16px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none; /*Remove a borda padrão do botão*/
     cursor: pointer; /*Deftop: 25px;ine o cursor como um ponteiro ao passar sobre o botão*/
 }
 .loginAgenBut button{ /* Botão de agendamento */
     right: 540px;
-    padding: 5px 22px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 8px 18px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none;
     font-weight: bold;
@@ -143,7 +143,7 @@ footer{ /* Rodapé geral */
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 .loginFooter { /* Rodapé */
-    padding: 30px 50px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 30px 40px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
 }
 .loginGap{
     margin: 65px auto;
@@ -161,18 +161,18 @@ footer{ /* Rodapé geral */
 .cadImage img{ /* Logo do Senai */
     display: block; /* Necessário para que as margens funcionem */
     margin: 0 auto;
-    max-width: 300px; /*Define a largura máxima das imagens dentro da main como 150px*/
+    max-width: 200px; /*Define a largura máxima das imagens dentro da main como 150px*/
     margin-top: 12px;
 }
 .cadHomeBut button{ /* Botão home */
     right: 20px; /*Alinha o botão á direita, com 20px de ditância da borda direita da página */
-    top: 32px; /*Alinha o botão ao topo, com 20px de distância da borda superior*/
+    top: 14px; /*Alinha o botão ao topo, com 20px de distância da borda superior*/
     position: absolute; /*Posiciona o botão de forma absoluta com relação ao cabeçalho*/
     background-color: #D5CFCF;
     color: #FFFFFF;
     font-weight: bold;
     font-size: 24px;
-    padding: 15px 25px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 6px 16px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none; /*Remove a borda padrão do botão*/
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
@@ -209,43 +209,100 @@ footer{ /* Rodapé geral */
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 
+.cadFooter{
+    padding: 30px 40px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+}
+
+.cadLoginBut button{
+    right: 590px;
+    padding: 10px 20px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    border-radius: 5px; /*Arredonda os cantos do botão*/
+    border: none;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
+    background-color: #D20114;
+    color: #FFFFFF;
+    position: absolute; /*Posiciona o rodapé de forma absoluta em relação ao body*/
+    bottom:0; /*Alinha o rodapé abaixo da página*/
+    font-size: 20px;
+    font-weight: bold;
+    height: 80%;
+}
+
+
 /*======================== Agendamento page ================================*/
 .headerAgen{
-    padding: 2px;
+    padding: 2px; /*Cria um espaço entre o conteúdo e as bordas*/
 }
 .agenImage img{ /* Logo do Senai */
     display: block; /* Necessário para que as margens funcionem */
-    margin: 0 auto;
+    margin: 0 auto; /*Centraliza horizontalmente e elimina qualquer margem superior ou inferior*/
     max-width: 300px; /*Define a largura máxima das imagens dentro da main como 150px*/
-    margin-top: 12px;
-}
-
-.titleAgen1 h1{
-    text-align: center;
-    background-color: #D20114;
+    margin-top: 12px; /*Define o espaço acima da imagem, entre sua borda superior e o elemento anterior*/
 }
 
 .chooseDateAgen1{
     font-weight: bold;
     margin-top: -25px; /* Espaçamento entre o título e os botões */
     color: #FFFFFF;
-    padding: 5px 5px; /*Define o espaço interno do botão em 10px (vertical) e 20px (horizontal)*/
+    padding: 5px 5px; /*Define o espaço interno do botão em 5px (vertical) e 5px (horizontal)*/
     border-radius: 30px; /*Arredonda os cantos do botão*/
-    border: none;
+    border: none; /*Remove qualquer borda*/
     background-color: #B10A0A;
     max-width: 800px;
-    width: 325px;
+    width: 325px; /*Largura*/
     text-align: center; /* Centraliza o texto */
-    margin: auto;
+    margin: auto; /*Centraliza os elementos horizontalmente conforme a widht*/
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 
-.formulariohora{
-    display: flex;
-    color: #FFFFFF;
+.input-box-data{
+    background-color: rgb(255, 255, 255); /* Cor de fundo do bloco */
+    padding: 15px 20px; /*Define o espaço interno do botão em 15px (vertical) e 20px (horizontal)*/
+    border-radius: 5px; /*Arredonda os cantos do botão*/
+    border: none;
+    margin-top: 25px; /* Espaçamento entre o título e os botões */
+    font-weight: bold;
+    color: black;
+    cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 
-/* Cada separação tem um html como "Hospedeiro" no qual é atribuido ao html */
+.input-box-hora{
+    background-color: rgb(255, 255, 255); /* Cor de fundo do bloco */
+    padding: 15px 20px; /*Define o espaço interno do botão em 15px (vertical) e 20px (horizontal)*/
+    border-radius: 5px; /*Arredonda os cantos do botão*/
+    border: none;
+    margin-top: 25px; /* Espaçamento entre o título e os botões */
+    font-weight: bold;
+    color: black;
+    cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
+}
+
+.input-box-sala{
+    background-color: rgb(255, 255, 255); /* Cor de fundo do bloco */
+    padding: 15px 20px; /*Define o espaço interno do botão em 15px (vertical) e 20px (horizontal)*/
+    border-radius: 5px; /*Arredonda os cantos do botão*/
+    border: none;
+    margin-top: 25px; /* Espaçamento entre o título e os botões */
+    font-weight: bold;
+    color: black;
+    cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
+}
+
+.input-botao-reserva{
+    background-color: rgb(255, 255, 255); /* Cor de fundo do bloco */
+    padding: 15px 25px; /*Define o espaço interno do botão em 15px (vertical) e 25px (horizontal)*/
+    border-radius: 5px; /*Arredonda os cantos do botão*/
+    border: none;
+    margin-top: 15px; /* Espaçamento entre o título e os botões */
+    font-weight: bold; 
+    color: #ff0000; /*Define a cor da letra do botão de reserva*/
+    cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
+}
+
+.agenFooter{
+    padding: 20px 40px; /*Define o espaço interno do botão em 20px (vertical) e 40px (horizontal)*/
+}
+
 /* A logo senaisplogo (1).png é atribuida a todas as paginas html */
-/* Toda classe vem com o nome do arquivo html e o complemento ex: agenHeader ou headerAgen */
-/* Qualquer duvida utilizar o black box para adição de comentários sobre as linhas de programação do código */

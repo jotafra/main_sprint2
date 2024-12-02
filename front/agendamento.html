@@ -15,12 +15,16 @@
       </section>
     </header>
 
+    <br />
+    <br />
+    <br />
+
     <main>
-      <section class="titleAgen1">
-        <h1>Selecione uma data</h1>
-      </section>
       <section class="chooseDateAgen1">
+        <!-- Classe para a estilização no arquivo css -->
+        <h1>Selecione uma data</h1>
         <form id="form-selecao-data">
+          <!-- ID para escolha da data -->
           <label for="data">Escolha a data:</label>
           <input
             type="date"
@@ -29,42 +33,37 @@
             min="2024-01-01"
             max="2024-12-31"
             required
+            class="input-box-data"
           />
         </form>
-      </section>
-    </main>
 
-    <main>
-      <section class="formulariohora">
-      </section>
-      <section>
         <form id="form-selecao-horario">
+          <!-- ID para escolha do horário -->
           <label for="data">Escolha o horário:</label>
           <input
             type="time"
             id="hora"
-            name="horario"
-            min="07:30:00"
-            max="22:30:00"
+            name="hora"
+            min="07:30"
+            max="22:30"
             required
+            class="input-box-hora"
           />
         </form>
+
+        <label>Salas de aula</label>
+        <select id="sala" class="input-box-sala"></select>
+        <!-- ID para escolha da sala (menu dropdown) -->
+
+        <br />
+
+        <!-- Botão para reserva -->
+        <input type="submit" value="Reservar" class="input-botao-reserva" />
       </section>
     </main>
 
-    <label>Salas de aula</label>
-    <select id="sala">
-      <option value="Sala 1">Sala 1</option>
-      <option value="Sala 2">Sala 2</option>
-    </select>
-
-    <main>
-        <section>
-            <input type="submit" value="Reservar">
-        </section>
-    </main>
-
-
-    <footer></footer>
+    <footer class="agenFooter"></footer>
+    <script src="appAgendamento.js"></script>
+    <!-- Para fazer a comunicação com o appAgendamento.js -->
   </body>
 </html>

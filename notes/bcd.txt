@@ -57,8 +57,6 @@ create table reserva(
     	"equipamentos": "Informatica"
 }
 
-
-
 -- agendamento POST
 {
 	"fk_id_usuario": "1",
@@ -76,3 +74,46 @@ create table reserva(
 }
 -- agendamento DELETE
 	Adicionar id no final na URL 
+
+//-----------------------------------------------------------------------------------------------
+
+-- Povoamento das salas 
+
+INSERT INTO sala (nome, descricao, bloco, tipo, capacidade) VALUES
+('AMA - Automotiva', 'Alta Mogiana Automotiva', 'A', 'Oficina', 16),
+('AMS - Desenvolvimento', 'Alta Mogiana Desenvolvimento de Sistema', 'A', 'Sala', 16),
+('AME - Eletroeletrônica', 'Alta Mogiana Eletroeletrônica', 'A', 'Laboratório', 16),
+('AMM - Manutenção', 'Alta Mogiana Manutenção', 'A', 'Oficina', 16),
+('A2 - ELETRÔNICA', 'Laboratório de Eletrônica', 'A', 'Laboratório', 16),
+('A3 - CLP', 'Controladores Lógicos Programáveis', 'A', 'Laboratório', 16),
+('A4 - AUTOMAÇÃO', 'Sistemas de Automação', 'A', 'Laboratório', 20),
+('A5 - METROLOGIA', 'Instrumentos de Medição', 'A', 'Laboratório', 16),
+('A6 - PNEUMÁTICA', 'Equipamentos Pneumáticos e Hidráulicos', 'A', 'Laboratório', 20),
+('B2 - AULA', 'Sala de Aula', 'B', 'Sala', 32),
+('B3 - AULA', 'Sala de Aula', 'B', 'Sala', 32),
+('B5 - AULA', 'Sala de Aula', 'B', 'Sala', 40),
+('B6 - AULA', 'Sala de Aula', 'B', 'Sala', 32),
+('B7 - AULA', 'Sala de Aula', 'B', 'Sala', 32),
+('B8 - INFORMÁTICA', 'Laboratório de Informática', 'B', 'Laboratório', 20),
+('B9 - INFORMÁTICA', 'Estação de Trabalho', 'B', 'Laboratório', 16),
+('B10 - INFORMÁTICA', 'Computadores Programáveis', 'B', 'Laboratório', 16),
+('B11 - INFORMÁTICA', 'Equipamentos de Rede', 'B', 'Laboratório', 40),
+('B12 - INFORMÁTICA', 'Laboratório de TI', 'B', 'Laboratório', 40),
+('CA - Colorado A1', 'Sala Multimídia', 'C', 'Sala', 16),
+('COF - Colorado Oficina', 'Ferramentas Manuais', 'C', 'Oficina', 16),
+('C1 - AULA (ALP)', 'Sala de Aula (ALP)', 'C', 'Sala', 24),
+('C2 - INFORMATICA', 'Software Educacional', 'C', 'Laboratório', 32),
+('C3 - MODELAGEM', 'Máquinas de Costura', 'C', 'Oficina', 20),
+('C4 - MODELAGEM', 'Equipamentos de Modelagem', 'C', 'Oficina', 20),
+('C5 - AULA', 'Materiais Didáticos', 'C', 'Sala', 16),
+('D1 - MODELAGEM', 'Ferramentas de Modelagem', 'D', 'Oficina', 16),
+('D2 - MODELAGEM', 'Estações de Trabalho de Modelagem', 'D', 'Oficina', 20),
+('D3 - AULA', 'Quadro e Projetor', 'D', 'Sala', 16),
+('D4 - CRIAÇÃO', 'Materiais de Artesanato', 'D', 'Oficina', 18),
+('LAB - ALIMENTOS', 'Equipamentos de Cozinha', 'Lab', 'Laboratório', 16),
+('OFI - AJUSTAGEM/FRESAGEM', 'Máquinas de Fresagem', 'Oficina', 'Oficina', 16),
+('OFI - COMANDOS ELÉTRICOS', 'Circuitos Elétricos', 'Oficina', 'Oficina', 16),
+('OFI - TORNEARIA', 'Torno Mecânico', 'Oficina', 'Oficina', 20),
+('OFI - SOLDAGEM', 'Equipamentos de Solda', 'Oficina', 'Oficina', 16),
+('OFI - MARCENARIA', 'Ferramentas de Marcenaria', 'Oficina', 'Oficina', 16),
+('OFI - LIXAMENTO', 'Lixadeiras e Polidoras', 'Oficina', 'Oficina', 16);

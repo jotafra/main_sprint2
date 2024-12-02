@@ -13,7 +13,7 @@ if (formularioCadastro) {
         console.log(nome_completo, email, cpf, senha);
 
         //Requisição HTTP para o endpoint de cadastro de usuario
-        fetch("http://localhost:5000/agen/sala-de-aula/v1/user", {
+        fetch("http://localhost:5000/agensala/user", {
             //Realiza uma chamada http para o servidor(a rota definida)
             method: "POST",
             headers: {
@@ -62,7 +62,7 @@ if (formularioLogin) {
         const senha = document.getElementById("senha").value;
 
         //Requisição HTTP para o endpoint de cadastro de usuario
-        fetch("http://localhost:5000/agen/sala-de-aula/v1/login", {
+        fetch("http://localhost:5000/agensala/login", {
             //Realiza uma chamada http para o servidor(a rota definida)
             method: "POST",
             headers: {
