@@ -30,7 +30,8 @@ function getAllSalas() {
       data.salas.forEach((sala) => {
         const option = document.createElement("option");
         option.value = sala.id; // Substitua pelo campo correto para o ID da sala
-        option.textContent = sala.nome_da_sala; // Substitua pelo campo correto para o nome da sala
+        option.textContent = `Nome : ${sala.nome_da_sala}, Descrição : ${sala.descricao}, Bloco: ${sala.bloco},
+        Tipo: ${sala.tipo}, Capacidade: ${sala.capacidade}`; // Substitua pelo campo correto para o nome da sala
         selectSala.appendChild(option);
       });
 

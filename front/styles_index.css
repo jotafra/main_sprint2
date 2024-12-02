@@ -251,7 +251,7 @@ footer{ /* Rodapé geral */
     border: none; /*Remove qualquer borda*/
     background-color: #B10A0A;
     max-width: 800px;
-    width: 325px; /*Largura*/
+    width: 1000px; /*Largura*/
     text-align: center; /* Centraliza o texto */
     margin: auto; /*Centraliza os elementos horizontalmente conforme a widht*/
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
@@ -265,6 +265,7 @@ footer{ /* Rodapé geral */
     margin-top: 25px; /* Espaçamento entre o título e os botões */
     font-weight: bold;
     color: black;
+    width: 200px;
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 
@@ -276,6 +277,7 @@ footer{ /* Rodapé geral */
     margin-top: 25px; /* Espaçamento entre o título e os botões */
     font-weight: bold;
     color: black;
+    width: 200px;
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
 }
 
@@ -284,7 +286,7 @@ footer{ /* Rodapé geral */
     padding: 15px 20px; /*Define o espaço interno do botão em 15px (vertical) e 20px (horizontal)*/
     border-radius: 5px; /*Arredonda os cantos do botão*/
     border: none;
-    margin-top: 25px; /* Espaçamento entre o título e os botões */
+    margin-top: 10px; /* Espaçamento entre o título e os botões */
     font-weight: bold;
     color: black;
     cursor: pointer; /*Define o cursor como um ponteiro ao passar sobre o botão*/
